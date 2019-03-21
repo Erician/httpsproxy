@@ -33,7 +33,7 @@ all : $(TESTS)
 # function.
 
 $(OBJDIR)/hpy_stringutil_ut.o : $(UTILS_USER_TEST_DIR)/hpy_stringutil_ut.cc  $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(UTILS_USER_TEST_DIR)/hpy_stringutil_ut.cc -o $@
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
 $(OBJDIR)/hpy_stringutil_ut : $(OBJDIR)/hpy_stringutil.o $(OBJDIR)/hpy_stringutil_ut.o $(OBJDIR)/gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@

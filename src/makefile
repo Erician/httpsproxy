@@ -84,6 +84,6 @@ ut-core-encryption: $(OBJDIR)/hpy_encryption_ut
 	./$(OBJDIR)/hpy_encryption_ut
 
 clean:
-	@rm -f $(JUNK) $(PRODUCTS) ./hpy
+	@rm -rf $(JUNK) $(PRODUCTS) ./hpy $(OBJDIR)
 
 

@@ -26,8 +26,8 @@ TEST(EncryptionTest, SimpleString_ShouldPass)
     plain_text[7] = '\0';
     tmp_text[7] = '\0';
 
-    hpy::Tcp::Encryption::Encryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 1);
-    hpy::Tcp::Decryption::Decryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 1);
+    hpy::Tcp::Encryption::Encrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 1);
+    hpy::Tcp::Decryption::Decrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 1);
     //ASSERT_EQ("",tmp_text);
     ASSERT_EQ(0, string_cmp(plain_text, tmp_text, 8));
 }
@@ -46,8 +46,8 @@ TEST(EncryptionTest, LittlehardString_ShouldPass)
     plain_text[7] = '\0';
     tmp_text[7] = '\0';
 
-    hpy::Tcp::Encryption::Encryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 1);
-    hpy::Tcp::Decryption::Decryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 1);
+    hpy::Tcp::Encryption::Encrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 1);
+    hpy::Tcp::Decryption::Decrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 1);
     //ASSERT_EQ("",tmp_text);
     ASSERT_EQ(0, string_cmp(plain_text, tmp_text, 8));
 }
@@ -65,20 +65,20 @@ TEST(EncryptionTest, DifferentKeys_ShouldPass)
     plain_text[7] = '\0';
     tmp_text[7] = '\0';
 
-    hpy::Tcp::Encryption::Encryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 8);
-    hpy::Tcp::Decryption::Decryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 8);
+    hpy::Tcp::Encryption::Encrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 8);
+    hpy::Tcp::Decryption::Decrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 8);
     ASSERT_EQ(0, string_cmp(plain_text, tmp_text, 8));
 
-    hpy::Tcp::Encryption::Encryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 255);
-    hpy::Tcp::Decryption::Decryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 255);
+    hpy::Tcp::Encryption::Encrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 255);
+    hpy::Tcp::Decryption::Decrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 255);
     ASSERT_EQ(0, string_cmp(plain_text, tmp_text, 8));
 
-    hpy::Tcp::Encryption::Encryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 0);
-    hpy::Tcp::Decryption::Decryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 0);
+    hpy::Tcp::Encryption::Encrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 0);
+    hpy::Tcp::Decryption::Decrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 0);
     ASSERT_EQ(0, string_cmp(plain_text, tmp_text, 8));
 
-    hpy::Tcp::Encryption::Encryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 300);
-    hpy::Tcp::Decryption::Decryption(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 300);
+    hpy::Tcp::Encryption::Encrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 0);
+    hpy::Tcp::Decryption::Decrypt(hpy::Tcp::Encryption::kCaesarCipher, plain_text, 8, 0);
     ASSERT_EQ(0, string_cmp(plain_text, tmp_text, 8));
 
 }

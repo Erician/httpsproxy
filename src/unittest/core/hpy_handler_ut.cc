@@ -1,12 +1,15 @@
 #include <limits.h>
 #include "gtest/gtest.h"
 #include "core/hpy_handler.h"
+#include "utils/args/hpy_args.h"
+#include "utils/args/hpy_options.h"
 
 class HandlerTest : public ::testing::Test
 {
 protected:
     virtual void SetUp() {
-        ;
+        //this code is ugly
+        args.Set(Options::RUN_AS_SERVER, std::string());
     }
     virtual void TearDown() {
         ;
