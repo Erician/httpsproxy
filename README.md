@@ -12,20 +12,20 @@ Note: This program is just for learning, and maybe it is not safe. So I suggest 
 # how to run this proxy
 (1)cd into src
 ```shell
-$cd httpsproxy/src
+$ cd httpsproxy/src
 ```
 (2)compile
 ```shell
-$make clean
-$make 
+$ make clean
+$ make 
 ```
 (3)run hpptsproxy-server on a server 
 ```shell
-$make start-server    #use "make stop-server" to stop the server
+$ make start-server    #use "make stop-server" to stop the server
 ```
 (4)run httpsproxy-client on your own computer
 ```shell
-$make start-client    #use "make stop-client" to stop the client
+$ make start-client    #use "make stop-client" to stop the client
 ```
 (5)proxy for some web
 If you want to proxy some web, just config the web domains'ip to localhost. For example:
@@ -36,14 +36,14 @@ to proxy example.com, we should add a line in the /etc/hosts:
 # auto start httpsproxy when the computer starting
 (1) put the src/httpsproxy.sh file to /etc/init.d
 ```shell
-#cd httpsproxy/src
-#sudo cp httpsproxy.sh /etc/init.d
+$ cd httpsproxy/src
+$ sudo cp httpsproxy.sh /etc/init.d
 ```
 (2) change the file mode with the following command:
 ```shell
-#sudo chmod 755 /etc/init.d/httpsproxy.sh
+$ sudo chmod 755 /etc/init.d/httpsproxy.sh
 ```
 (3) make a soft link file in /etc/rc3.d
 ```shell
-#sudo ln -s /etc/init.d/httpsproxy.sh /etc/rc3.d/S03httpsproxy 
+$ sudo ln -s /etc/init.d/httpsproxy.sh /etc/rc3.d/S03httpsproxy 
 ```
