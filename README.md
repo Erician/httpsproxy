@@ -34,7 +34,7 @@ to proxy example.com, we should add a line in the /etc/hosts:
 127.0.0.1   example.com
 ```
 # auto start httpsproxy when the computer starting
-(1) modify the file path in src/httpsproxy.sh, should be your own path.
+(1) modify the file path in src/httpsproxy.sh, should be your own path.  
 (2) put the src/httpsproxy.sh file to /etc/init.d
 ```shell
 $ cd httpsproxy/src
