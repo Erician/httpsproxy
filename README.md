@@ -34,16 +34,17 @@ to proxy example.com, we should add a line in the /etc/hosts:
 127.0.0.1   example.com
 ```
 # auto start httpsproxy when the computer starting
-(1) put the src/httpsproxy.sh file to /etc/init.d
+(1) modify the file path in src/httpsproxy.sh, should be your own path.
+(2) put the src/httpsproxy.sh file to /etc/init.d
 ```shell
 $ cd httpsproxy/src
 $ sudo cp httpsproxy.sh /etc/init.d
 ```
-(2) change the file mode with the following command:
+(3) change the file mode with the following command:
 ```shell
 $ sudo chmod 755 /etc/init.d/httpsproxy.sh
 ```
-(3) make a soft link file in /etc/rc3.d
+(4) make a soft link file in /etc/rc3.d
 ```shell
 $ sudo ln -s /etc/init.d/httpsproxy.sh /etc/rc3.d/S03httpsproxy 
 ```
